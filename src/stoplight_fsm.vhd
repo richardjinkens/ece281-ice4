@@ -100,12 +100,6 @@ begin
             elsif (rising_edge(i_clk)) then
                 f_Q <= f_Q_next;    -- next state becomes current state
             end if;
-    end process register_proc;
-    
-	begin
-			--Reset state is yellow
-
-
 	end process register_proc;
 	-------------------------------------------------------
 	
