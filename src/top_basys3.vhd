@@ -91,15 +91,15 @@ end component clock_divider;
 begin
 	-- PORT MAPS ----------------------------------------
 	--Port map stoplight here based on the design provided
-    fsm: stoplight_fsm
-    port map (
-        sw(0) => i_C,
-        btnC => i_reset,
-        w_clk => i_clk,
-        o_R => JA,
-        o_Y => JA,
-        o_G => JA
-    );
+    stoplight_unit: stoplight_fsm
+        port map (
+            i_C => sw(0),
+            i_reset => btnC,
+            i_clk => w_clk,
+            o_R      => JA(2),
+            o_Y      => JA(1),
+            o_G      => JA(0)
+        );
 
 --Complete the clock_divider portmap below based on the design provided	
 	clkdiv_inst : clock_divider 		--instantiation of clock_divider to take 
